@@ -26,19 +26,20 @@ require 'pry'
 # Words that start with a consonant start with lower case
 # Consonants after the first letter alternate upper and lower case, except the alternation starts over with lowercase after a digit (ex: sCh00l)
 
-puts 'Say something to Daniel'
-chat = gets.chomp
 
-if chat.include?('?')
+
+puts 'Say something to Daniel'  # or print keyword doesn't return cursor
+chat = gets.chomp       # can start by hard coding comment
+
+if chat.include?('?')   # or chat.end_with?('?')
   puts 'Sure'
-elsif chat.empty?
+elsif chat.empty?   # or chat.length == 0
   puts 'Fine. Be that way!'
-elsif chat == chat.upcase
+elsif chat.upcase == chat    # or chat.upcase == chat
   puts 'Whoa, chill out!'
 else
   puts 'Whatever'
 end
-
 
 # binding.pry
 # puts 'end'
