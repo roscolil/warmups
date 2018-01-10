@@ -25,33 +25,30 @@ require 'pry'
 
 order = {}
 
-print 'Name for order: (enter name) '
-name = gets.chomp
-order[:name] = name
+loop do
+  print 'Name for order: (enter name) '
+  name = gets.chomp
 
-print "#{name} wants to order: (enter item) "
-item = gets.chomp
-order[:item] = item
+  print "#{name} wants to order: (enter item) "
+  item = gets.chomp
+  order[name] = item
 
-print "Would you like to add another item to the order #{name}? (y/n)"
-decision = gets.chomp
-
-if decision == 'y'
-  print 'Add the next item: '
-  next_item = gets.chomp
-  order[:item] = item + next_item
+  if order[name]
+    order[name].push(item)
+  else
+    order[name] = [item]
+  end
 
   print "Would you like to add another item to the order #{name}? (y/n)"
-  decision = gets.chomp
-
-  if decision == 'y'
-    print 'Add the next item: '
-    next_item = gets.chomp
-    order[:item] += next_item
+  taking_orders = gets.chomp
+  if taking_orders == 'n'
+    break
   end
-else
-  puts "All orders: #{order}"
 end
+
+print ""
+
+
 
 # See notes for alternative solution
 
