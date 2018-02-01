@@ -64,10 +64,10 @@ var blocks =
 
 
 var can_make_word = function(word){
-  var word_arr =  word.split('');
+  var word_arr = word.split('');
   word_arr.forEach(function(word){
     // incomplete
-    // could you while loop to test condition instead of .every function
+    // could use while loop to test condition instead of .every function
     // remove element when found?
     console.log(word);
   });
